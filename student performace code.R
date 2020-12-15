@@ -59,7 +59,6 @@ ggplot(data, aes(x = gender)) + geom_bar()
 ggplot(data3, aes(x = "race/ethnicity")) + geom_bar()
 ##creating dummies##
 data1 <- dummy_cols(data, select_columns = c("test preparation course", "gender"))
-data1 <- dummy_cols(data, select_columns = 'gender')
 glimpse(data1)
 ##models##
 model <- lm(math.score ~ gender_female + writing.score + reading.score + `test preparation course_completed`, data = data1)
@@ -71,11 +70,9 @@ model4 <-  lm(math.score ~ gender_female + writing.score + reading.score + `test
 model5 <- lm(writing.score ~ gender_female + math.score + parent.edu + `test preparation course_none`, data = data1)
 
 summary(model)
+summary(model1.2)
 summary(model2)
+summary(model2.2)
 summary(model3)
 summary(model4)
 summmary(model5)
-
-
-
-
